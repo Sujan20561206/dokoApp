@@ -4,8 +4,8 @@ import 'package:doko_app/views/product_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TrendingProductSection extends StatelessWidget {
-  const TrendingProductSection({
+class FeaturedProductsSection extends StatelessWidget {
+  const FeaturedProductsSection({
     Key? key,
   }) : super(key: key);
 

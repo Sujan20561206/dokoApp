@@ -117,6 +117,7 @@ class _AddProductPageState extends State<AddProductPage> {
               image == null
                   ? OutlinedButton(
                       onPressed: () async {
+                        // button press garda ImagePicker Package use gareko telley gallery kholcha ra image select garcha
                         var imagePicker = await ImagePicker()
                             .pickImage(source: ImageSource.gallery);
                         if (imagePicker != null) {

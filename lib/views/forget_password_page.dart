@@ -46,6 +46,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                       setState(() {
                         _loading = true;
                       });
+                      // to send reset link to user (ctrl+postData)
                       await ApiClient().postData(data: {
                         "email": emailController.text,
                       }, endpoint: "forget-password");

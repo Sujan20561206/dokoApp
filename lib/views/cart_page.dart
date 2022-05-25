@@ -113,7 +113,7 @@ class _CartPageState extends ConsumerState<CartPage> {
                                                           _products.indexOf(e)]
                                                       .total = (e.quantity *
                                                           e.currentPrice!)
-                                                      .toString();
+                                                      .toString(); // quantity anusar total price calculate
                                                 });
                                               },
                                               icon: const Icon(Icons.add))

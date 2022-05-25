@@ -64,6 +64,7 @@ class _LoginPageState extends State<LoginPage> with ValidationMixin {
                   ),
                   DataForm(
                     validator: (value) {
+                      // email validation check
                       return isEmailValid(value!) ? null : 'Invalid email';
                     },
                     hintText: 'Your email',
@@ -86,6 +87,7 @@ class _LoginPageState extends State<LoginPage> with ValidationMixin {
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.disabled,
                         validator: (value) {
+                          // validation login(ctrl+isPasswordValid)
                           if (isPasswordValid(value!)) {
                             return null;
                           } else {
@@ -133,6 +135,7 @@ class _LoginPageState extends State<LoginPage> with ValidationMixin {
                         ))
                       : InkWell(
                           onTap: () async {
+                            //validation call email ra password ko
                             if (_formKey.currentState!.validate()) {
                               _formKey.currentState!.save();
                               setState(() {
@@ -156,6 +159,7 @@ class _LoginPageState extends State<LoginPage> with ValidationMixin {
                               } else {
                                 SharedPreferences _prefs =
                                     await SharedPreferences.getInstance();
+                                // admin or user role save
                                 _prefs.setBool("login", true);
                                 _prefs.setInt("userid", result["userid"]);
                                 _prefs.setString("role", result["role"]);

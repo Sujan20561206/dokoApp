@@ -4,8 +4,8 @@ import 'package:doko_app/views/product_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class FlashSaleSection extends ConsumerWidget {
-  const FlashSaleSection({
+class HomepageProducts extends ConsumerWidget {
+  const HomepageProducts({
     Key? key,
   }) : super(key: key);
 
@@ -36,6 +36,7 @@ class FlashSaleSection extends ConsumerWidget {
               loading: () => const CircularProgressIndicator(),
               data: (_data) {
                 return Column(children: [
+                  // products slide garauna slider external package use gareko pubspec.yaml ma used packages
                   CarouselSlider(
                     items: [
                       ..._data.map(

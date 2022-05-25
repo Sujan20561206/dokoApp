@@ -7,12 +7,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/models/order_model.dart';
 
+// database connection
 class ApiClient {
   Future<ProfileModel> getProfile() async {
     final SharedPreferences _prefs = await SharedPreferences.getInstance();
     var token = _prefs.getString("token");
     var userid = _prefs.getInt("userid");
     final result = await Dio(BaseOptions(
+            // config.dart ko url ko data taneko
             baseUrl: Config.baseUrl,
             headers: {"Authorization": "Bearer $token"}))
         .get("user-profile/$userid");

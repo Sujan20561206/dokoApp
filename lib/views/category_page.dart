@@ -62,11 +62,12 @@ class CategoryPage extends ConsumerWidget {
                         subtitle: Text("id : ${e.id}"),
                         trailing: IconButton(
                           onPressed: () async {
+                            // Category delete for admin (ctrl+deleteCategory)
                             await ApiClient().deleteCategory(categoryId: e.id);
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content:
-                                        Text("Product deleted successfully")));
+                                        Text("Category deleted successfully")));
                             ref.refresh(categoriesProvider);
                           },
                           icon: const Icon(

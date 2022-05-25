@@ -93,6 +93,7 @@ class ProductEditPage extends ConsumerWidget {
             ),
             OutlinedButton(
                 onPressed: () async {
+                  // product update(ctrl+updateProduct)
                   ApiClient().updateProduct(data: {
                     "name": nameController.text,
                     "short_description": sDesController.text,

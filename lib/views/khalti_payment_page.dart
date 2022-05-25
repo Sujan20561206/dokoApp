@@ -18,6 +18,7 @@ class KhaltiPaymentPage extends StatefulWidget {
 }
 
 class _KhaltiPaymentPageState extends State<KhaltiPaymentPage> {
+  // whole order ko total price calculate
   getTotal() {
     int sum = 0;
     for (int i = 0; i < widget.orders.length; i++) {

@@ -4,16 +4,16 @@ import 'package:doko_app/views/cart_page.dart';
 import 'package:doko_app/views/category_page.dart';
 import 'package:doko_app/views/login_page.dart';
 import 'package:doko_app/views/my_order_list_page.dart';
-import 'package:doko_app/views/order_list_page.dart';
+import 'package:doko_app/views/adminOrder_list_page.dart';
 import 'package:doko_app/views/profile_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'home_page_pupular_section.dart';
+import 'homepage_FeaturedProducts.dart';
 import 'homepage_category.dart';
-import 'homepage_flash_sale_section.dart';
+import 'homepage_Products.dart';
 
 class Homepage extends ConsumerWidget {
   const Homepage({Key? key, required this.role}) : super(key: key);
@@ -32,6 +32,7 @@ class Homepage extends ConsumerWidget {
                     const SizedBox(
                       height: 100,
                     ),
+                    // role admin cha bhaney
                     if (role == "admin")
                       ListTile(
                         onTap: () {
@@ -131,6 +132,7 @@ class Homepage extends ConsumerWidget {
                     // ),
                   ),
                   GestureDetector(
+                    // logout huncha ani login page ma jancha
                     onTap: () async {
                       SharedPreferences _prefs =
                           await SharedPreferences.getInstance();
@@ -163,9 +165,9 @@ class Homepage extends ConsumerWidget {
             shrinkWrap: true,
             children: const [
               // SearchWidget(),
-              TrendingProductSection(),
+              FeaturedProductsSection(),
               CategoriesSection(),
-              FlashSaleSection(),
+              HomepageProducts(),
               // RecomendedSection()
             ],
           ),

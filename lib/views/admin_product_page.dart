@@ -156,6 +156,7 @@ class _AdminProductPageState extends ConsumerState<AdminProductPage> {
                                             style: OutlinedButton.styleFrom(
                                                 primary: Colors.red),
                                             onPressed: () async {
+                                              // product delete (ctrl+deleteProduct)
                                               await ApiClient().deleteProduct(
                                                   productId: e.productId);
                                               ScaffoldMessenger.of(context)

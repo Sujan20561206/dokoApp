@@ -77,6 +77,7 @@ class _SignupPageState extends State<SignupPage> with ValidationMixin {
                   ),
                   DataForm(
                     validator: (value) {
+                      // validation call (ctrl + isEmailValid)
                       return isEmailValid(value!) ? null : 'Invalid email';
                     },
                     hintText: 'Your email',
@@ -88,6 +89,7 @@ class _SignupPageState extends State<SignupPage> with ValidationMixin {
                   ),
                   DataForm(
                       validator: (value) {
+                        // phone number validation check
                         return isPhoneValid(value!)
                             ? null
                             : 'Invalid phone number';
@@ -220,6 +222,7 @@ class _SignupPageState extends State<SignupPage> with ValidationMixin {
                             color: Color(0xFF00693E),
                           ),
                         ))
+                      // validation call for all
                       : SignUpButton(onTap: () async {
                           ScaffoldMessenger.of(context).clearSnackBars();
                           if (_formKey.currentState!.validate()) {
@@ -227,6 +230,7 @@ class _SignupPageState extends State<SignupPage> with ValidationMixin {
                             setState(() {
                               _loading = true;
                             });
+                            // signup detail server ma pathaucha(ctrl+ApiClient)
                             final result = await ApiClient().signUp(data: {
                               "name": nameController.text,
                               "email": emailController.text,
